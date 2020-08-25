@@ -9,18 +9,29 @@ namespace GuessingGame
         {
             Console.WriteLine("I'm thinking of a number between 1-100. Guess what the number is correctly and get a PRIZE!");
             Console.Write("What's your guess?");
-            string readGuess = Console.ReadLine();
-            int GuessedNumber = int.Parse(readGuess);
+            int GuessedNumber = Convert.ToInt32(Console.ReadLine());
 
+            int playerChance = 0;
             int secretNumber = 42;
-            if (GuessedNumber == secretNumber)
+
+            while (playerChance < 3)
             {
-                Console.WriteLine("You guessed right and you know the secret to life!");
+                if (GuessedNumber == secretNumber)
+                {
+                    Console.WriteLine("You guessed right and you know the secret to life!");
+                    break;
+                }
+                else if (GuessedNumber != secretNumber)
+                {
+                    ++playerChance;
+                    Console.WriteLine("You guessed wrong. BOOOOO!");
+                    Console.Beep(100, 400);
+                    Console.Beep(150, 1600);
+                    Console.WriteLine("Would you like to try again?");
+                    GuessedNumber = Convert.ToInt32(Console.ReadLine());
+
+                };
             }
-            else
-            {
-                Console.WriteLine("You guessed wrong. BOOOOO!");
-            };
         }
     }
 }
