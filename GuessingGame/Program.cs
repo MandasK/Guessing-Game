@@ -10,7 +10,7 @@ namespace guessingGame
 
             int difficultyLevel = 0;
 
-            Console.WriteLine("Welcome to Number Guesser! Please seelct a dificulty: Easy, Medium, or Hard.");
+            Console.WriteLine("Welcome to Number Guesser! Please seelct a dificulty: Easy, Medium, or Hard. Or are you a 'cheater'?");
             string level = Console.ReadLine();
 
             if (level == "easy")
@@ -25,6 +25,10 @@ namespace guessingGame
             {
                 difficultyLevel = 4;
             }
+            else if (level == "cheater")
+            {
+                difficultyLevel = 100000000;
+            }
 
             for (int i = 0; i < difficultyLevel; i++)
             {
@@ -32,14 +36,12 @@ namespace guessingGame
                 Console.Write("What's your guess? ");
                 string guess = Console.ReadLine();
                 int GuessedNumber = int.Parse(guess);
-                Console.WriteLine(GuessedNumber);
-                Console.WriteLine(secretNumber);
 
                 if (GuessedNumber == secretNumber)
                 {
                     Console.WriteLine("You win! You know the answers to the universe!");
                     Console.Beep(320, 800);
-                    Console.Beep(320, 800);
+                    Console.Beep(320, 1000);
                     Console.Beep(400, 1200);
                     break;
                 }
