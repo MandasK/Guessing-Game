@@ -27,7 +27,7 @@ namespace GuessingGame
                     Console.WriteLine("You guessed wrong. BOOOOO!");
                     Console.Beep(100, 400);
                     Console.Beep(150, 1600);
-                    Console.WriteLine("Would you like to try again?");
+                    Console.WriteLine($"Would you like to try again? Guess({playerChance + 1})");
                     GuessedNumber = Convert.ToInt32(Console.ReadLine());
 
                 };
