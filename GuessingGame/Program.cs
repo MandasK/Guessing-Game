@@ -1,36 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace GuessingGame
+namespace guessingGame
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("I'm thinking of a number between 1-100. Guess what the number is correctly and get a PRIZE!");
-            Console.Write("What's your guess?");
-            int GuessedNumber = Convert.ToInt32(Console.ReadLine());
+            int secretNumber = new Random().Next(1, 100);
 
-            int playerChance = 0;
-            int secretNumber = 42;
+            int difficultyLevel = 0;
 
-            while (playerChance < 3)
+            Console.WriteLine("Welcome to Number Guesser! Please seelct a dificulty: Easy, Medium, or Hard.");
+            string level = Console.ReadLine();
+
+            if (level == "easy")
             {
+                difficultyLevel = 8;
+            }
+            else if (level == "medium")
+            {
+                difficultyLevel = 6;
+            }
+            else if (level == "hard")
+            {
+                difficultyLevel = 4;
+            }
+
+            for (int i = 0; i < difficultyLevel; i++)
+            {
+                Console.WriteLine($"I'm thinking of a number between 1-100. Guess what the number is correctly and get a PRIZE! Guesses left: {difficultyLevel - i - 1}");
+                Console.Write("What's your guess? ");
+                string guess = Console.ReadLine();
+                int GuessedNumber = int.Parse(guess);
+                Console.WriteLine(GuessedNumber);
+                Console.WriteLine(secretNumber);
+
                 if (GuessedNumber == secretNumber)
                 {
-                    Console.WriteLine("You guessed right and you know the secret to life!");
+                    Console.WriteLine("You win! You know the answers to the universe!");
+                    Console.Beep(320, 800);
+                    Console.Beep(320, 800);
+                    Console.Beep(400, 1200);
                     break;
                 }
-                else if (GuessedNumber != secretNumber)
+                else
                 {
-                    ++playerChance;
-                    Console.WriteLine("You guessed wrong. BOOOOO!");
-                    Console.Beep(100, 400);
-                    Console.Beep(150, 1600);
-                    Console.WriteLine($"Would you like to try again? Guess({playerChance + 1})");
-                    GuessedNumber = Convert.ToInt32(Console.ReadLine());
-
-                };
+                    if (GuessedNumber < secretNumber)
+                    {
+                        Console.WriteLine("Incorrect! The number I am thinking of is higher!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect! t he number I am thinking of is lower!");
+                    }
+                }
             }
         }
     }

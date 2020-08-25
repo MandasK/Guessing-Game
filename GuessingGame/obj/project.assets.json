@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kinga\\workspace\\csharp\\guessing-gmae\\GuessingGame\\GuessingGame.csproj",
-      "projectName": "GuessingGame",
-      "projectPath": "C:\\Users\\kinga\\workspace\\csharp\\guessing-gmae\\GuessingGame\\GuessingGame.csproj",
+      "projectUniqueName": "C:\\Users\\kinga\\workspace\\csharp\\guessing-gmae\\guessingGame\\guessingGame.csproj",
+      "projectName": "guessingGame",
+      "projectPath": "C:\\Users\\kinga\\workspace\\csharp\\guessing-gmae\\guessingGame\\guessingGame.csproj",
       "packagesPath": "C:\\Users\\kinga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kinga\\workspace\\csharp\\guessing-gmae\\GuessingGame\\obj\\",
+      "outputPath": "C:\\Users\\kinga\\workspace\\csharp\\guessing-gmae\\guessingGame\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
